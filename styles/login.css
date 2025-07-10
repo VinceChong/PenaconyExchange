@@ -1,0 +1,155 @@
+@font-face {
+    font-family: NadoorBoldItalic;
+    font-weight: bold;
+    src: url("../assets/font/NadoorBoldItalic.otf") format("opentype");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: NadoorBoldItalic, Tahoma, sans-serif;
+    background: linear-gradient(#98a1e6, #9ab5fd, #6f70e6, #332c93);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #9ab5fd;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px #332c93, -10px -10px 30px #332c93;
+    width: 100%;
+    max-width: 400px;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.tabs button.active {
+    background: #eaf0a5;
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+}
+
+.form.active {
+    display: flex;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+label {
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #111;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #ebeae1;
+    box-shadow: inset 4px 4px 6px rgb(255, 241, 199);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button {
+    margin-top: 10px;
+    padding: 12px;
+    background:#eaf0a5;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 6px 6px 10px rgb(255, 241, 199), -6px -6px 10px, rgb(243, 255, 23);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.button:hover {
+    background:rgb(243, 255, 23);
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+.alert.success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+.closeButton {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: inherit;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .tabs button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input, .button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
