@@ -18,11 +18,10 @@ signUpTab.addEventListener("click", () => {
 })
 
 loginForm.addEventListener("submit", function(e) {
-    e.preventDefault();
 
     const formData = new FormData(this);
 
-    fetch("./db/login.php", {
+    fetch("/PenaconyExchange/db/login.php", {
         method: "POST",
         body: formData,
     })
@@ -34,7 +33,7 @@ loginForm.addEventListener("submit", function(e) {
             messageBox.innerHTML = `<div class="alert success">${data.message}</div>`;
 
             setTimeout(() => {
-                window.location.href = "../pages/dashboard.html";
+                window.location.href = "../pages/home.php";
             }, 1000);
         } else {
             messageBox.innerHTML = `<div class="alert error">${data.message}</div>`;

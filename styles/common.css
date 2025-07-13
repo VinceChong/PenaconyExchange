@@ -1,0 +1,54 @@
+@font-face {
+    font-family: NadoorBoldItalic;
+    font-weight: bold;
+    src: url("../assets/font/NadoorBoldItalic.otf") format("opentype");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: NadoorBoldItalic, Tahoma, sans-serif;
+    background: linear-gradient(#c5bafc, #6686f5, #3771e6, #3555c7, #18327E, #1C327D);
+    height: 100vh;
+}
+
+label {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #ebeae1;
+    box-shadow: inset 4px 4px 6px rgb(255, 241, 199);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div #maincontainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .tabs button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input, .button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

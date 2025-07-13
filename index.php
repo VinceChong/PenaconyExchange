@@ -5,12 +5,12 @@
         <meta charset="UTF-8"/>
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
         <title> Penacony </title>
-        <link rel = "stylesheet" href = "./styles/login.css"/>
-        <link rel = "icon" href = "./assets/image/harmony.png">
+        <link rel = "stylesheet" href = "/PenaconyExchange/styles/common.css"/>
+        <link rel = "stylesheet" href = "/PenaconyExchange/styles/index.css"/>
+        <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
     </head>
 
-    <body>
-        
+    <body style = "display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <?php 
             $message = "";
             $type = "";
@@ -38,7 +38,7 @@
                 <button id = "signUpTab"> Sign Up </button>
             </div>
 
-            <form id = "loginForm" class = "form active" action = "./db/login.php" method = "POST">
+            <form id = "loginForm" class = "form active" action = "/PenaconyExchange/db/login.php" method = "POST">
                 <div class="form-group">
                     <label for = "email"> Email </label>
                     <input type = "email" name = "email" placeholder = "Songshu@gmail.com" required/>
@@ -49,10 +49,10 @@
                     <input type = "password" name = "password" placeholder = "Password" required/>
                 </div>
 
-                <button type = "submit" class = "button"></i> Login </button>
+                <button type = "submit" class = "button"> Login </button>
             </form>
 
-            <form id = "signUpForm" class = "form"  action = "./db/signUp.php" method = "POST">
+            <form id = "signUpForm" class = "form"  action = "/PenaconyExchange/db/signUp.php" method = "POST">
                 <div class="form-group">    
                     <label for = "username"> Username </label>
                     <input type = "text" name = "username" placeholder = "Songshu" required/>
@@ -77,6 +77,6 @@
             </form>
         </div>
 
-        <script src = "./scripts/login.js"></script>
+        <script src = "/PenaconyExchange/scripts/index.js"></script>
     </body>
 </html>

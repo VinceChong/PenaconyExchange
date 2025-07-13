@@ -1,0 +1,31 @@
+body {
+    background: #121212;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-info {
+    display: flex;
+    gap: 20px;
+}
+
+.main-info img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.details {
+    max-width: 600px;
+}
+
+.price {
+    color: #ffd700;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.desc {
+    margin-top: 20px;
+}
