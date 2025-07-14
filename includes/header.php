@@ -17,11 +17,11 @@
     header {
         width: 100%;
         padding: 20px 25px;
-        background: linear-gradient(to bottom right, #fdfba7, #fdfbbe, #fefa9a, #fefa8e, #fccb71, #e4ae57, #9f6813);
+        background: #ffffff;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #724612;
+        color: #0f4c81;
         position: fixed;
         top: 0;
         left: 0;
@@ -48,7 +48,7 @@
     }
 
     header a {
-        color: #724612;
+        color: #0f4c81;
         font-weight: bold;
         text-decoration: none;
     }

@@ -10,10 +10,16 @@
         <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
 
         <style>
+
+            .page-content {
+                background: #0f4c81;
+            }
             .game-card {
                 display: inline-block;
                 margin: 20px;
                 text-align: center;
+                color: #ffffff;
+                font-family: Roboto;
             }
 
             .game-card img {

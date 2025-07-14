@@ -8,6 +8,11 @@
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/common.css"/>
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/index.css"/>
         <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
+        <style>
+            body {
+                background: #0f4c81;
+            }
+        </style>
     </head>
 
     <body style = "display: flex; flex-direction: column; justify-content: center; align-items: center;">

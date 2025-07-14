@@ -6,7 +6,7 @@
 <style>
     footer {
         padding: 20px;
-        background: linear-gradient( #2c2dac, #3742b3, #4b58cc, #615ade);
+        background: linear-gradient( #0f4c81, #939cd4ff);
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -16,8 +16,8 @@
         bottom: 0;
     }
 
-    p {
-        color: #fefa8e;
+    footer p {
+        color: white;
         font-size: 12px;
     }
 
