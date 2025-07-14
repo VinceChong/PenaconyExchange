@@ -2,7 +2,7 @@
     <h2> PENACONY EXCHANGE </h2>
 
     <ul>
-        <li> <a href = "/PenaconyExchange/homepage.php"> Home </a></li>
+        <li> <a href = "/PenaconyExchange/pages/home.php"> Home </a></li>
         <li> <a href = "/PenaconyExchange/pages/library.php"> Library </a></li>
         <li> <a href = "/PenaconyExchange/pages/community.php"> Community </a></li>
         <li> <a href = "/PenaconyExchange/pages/wishlist.php"> Wishlist </a></li>
