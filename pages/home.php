@@ -25,8 +25,10 @@
     </head>
 
     <body>
-
-        <div class="game-list"></div>
+        <?php include("../includes/header.php"); ?>
+        <div class = "container">
+            <div id="gameList"></div>
+        </div>
 
         <?php include("../includes/footer.php"); ?>
         <script src = "/PenaconyExchange/scripts/home.js"></script>

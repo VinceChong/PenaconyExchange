@@ -12,8 +12,8 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        position: fixed;
-        bottom: 0px;
+        position: relative;
+        bottom: unset;
     }
 
     p {

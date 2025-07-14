@@ -1,6 +1,9 @@
 <?php
-    $json = file_get_contents("../db/Detail.php");
-    $gameDetails = json_decode($json, true);
+    include "../db/db.php";
+    include "../db/retrieveGameDetail.php";
+
+    $gameId = $_GET['gameId'] ?? 0;
+    $gameDetails = getGameDetail($connect, $gameId);
 ?>
 
 <!DOCTYPE html>

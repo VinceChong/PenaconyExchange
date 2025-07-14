@@ -1,7 +1,3 @@
-console.log("home.js loaded!");
-alert("JS is working!");
-
-
 document.addEventListener("DOMContentLoaded", () => {
     fetch("/PenaconyExchange/db/retrieveGames.php")
         .then(response => {
@@ -11,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
         })
         .then(games => {
-            console.log("Games fetched:", games);  // Debug
 
             const container = document.getElementById("gameList");
 
@@ -25,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.className = "game-card";
 
                 card.innerHTML = `
-                    <a href="/PenaconyExchange/pages/gameDetailed.php?gameId=${game.gameId}">
+                    <a href="/PenaconyExchange/pages/gameDetail.php?gameId=${game.gameId}">
                         <img src="${game.mainPicture}" alt="${game.gameTitle}" />
                     </a>
                     <p>${game.gameTitle}</p>
