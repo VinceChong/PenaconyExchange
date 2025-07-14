@@ -26,8 +26,11 @@
 
     <body>
         <?php include("../includes/header.php"); ?>
-        <div class = "container">
-            <div id="gameList"></div>
+        
+        <div class = "page-wrapper">
+            <div class="page-content">
+                <div id="gameList"></div>
+            </div>
         </div>
 
         <?php include("../includes/footer.php"); ?>

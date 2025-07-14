@@ -27,7 +27,6 @@
         left: 0;
         box-sizing: border-box;
         flex-wrap: wrap; 
-        z-index: 999;
     }
 
     header h2 {

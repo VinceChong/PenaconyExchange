@@ -12,10 +12,13 @@
 
     <body>
         <?php include("../includes/header.php"); ?>
-
-        <div id = "mainContainer">
-            
+        
+        <div class = "page-wrapper">
+            <div class="page-content">
+                <!-- Write the main content here -->
+            </div>
         </div>
+        
         <?php include("../includes/footer.php"); ?>
         <script src = "/PenaconyExchange/scripts/profile.js"></script>
     </body>
