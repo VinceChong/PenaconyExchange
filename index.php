@@ -8,11 +8,6 @@
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/common.css"/>
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/index.css"/>
         <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
-        <style>
-            body {
-                background: #0f4c81;
-            }
-        </style>
     </head>
 
     <body style = "display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -46,12 +41,12 @@
             <form id = "loginForm" class = "form active" action = "/PenaconyExchange/db/login.php" method = "POST">
                 <div class="form-group">
                     <label for = "email"> Email </label>
-                    <input type = "email" name = "email" placeholder = "Songshu@gmail.com" required/>
+                    <input type = "email" name = "email" id = "email" placeholder = "Songshu@gmail.com" required/>
                 </div>
 
                 <div class="form-group">
                     <label for = "password"> Password </label>
-                    <input type = "password" name = "password" placeholder = "Password" required/>
+                    <input type = "password" name = "password" id = "password" placeholder = "Password" required/>
                 </div>
 
                 <button type = "submit" class = "button"> Login </button>
@@ -60,22 +55,22 @@
             <form id = "signUpForm" class = "form"  action = "/PenaconyExchange/db/signUp.php" method = "POST">
                 <div class="form-group">    
                     <label for = "username"> Username </label>
-                    <input type = "text" name = "username" placeholder = "Songshu" required/>
+                    <input type = "text" name = "username" id = "username" placeholder = "Songshu" required/>
                 </div>
 
                 <div class="form-group">
                     <label for = "email"> Email </label>
-                    <input type = "email" name = "email" placeholder = "Songshu@gmail.com" required/>
+                    <input type = "email" name = "email" id = "email" placeholder = "Songshu@gmail.com" required/>
                 </div>
 
                 <div class="form-group">
                     <label for = "password"> Password </label>
-                    <input type = "password" name = "password" placeholder = "Password" required/>
+                    <input type = "password" name = "password" id = "password" placeholder = "Password" required/>
                 </div>
                 
                 <div class="form-group">
                     <label for = "confirmPassword"> Confirm Password </label>
-                    <input type = "password" name = "confirmPassword" placeholder = "Confirm Password" required/>
+                    <input type = "password" name = "confirmPassword" id = "confirmPassword" placeholder = "Confirm Password" required/>
                 </div>
                 
                 <button type = "submit" class = "button"> Sign Up </button>

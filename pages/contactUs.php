@@ -13,8 +13,8 @@
     <body>
         <?php include("../includes/header.php"); ?>
 
-        <div class = "page-wrapper">
-            <div class="page-content">
+        <div class = "pageWrapper">
+            <div class="pageContent">
                 <!-- Write the main content here -->
             </div>
         </div>

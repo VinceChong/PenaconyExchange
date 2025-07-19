@@ -32,9 +32,9 @@
 
     <body>
         <?php include("../includes/header.php"); ?>
-        
-        <div class = "page-wrapper">
-            <div class="page-content">
+
+        <div class = "pageWrapper">
+            <div class="pageContent">
                 <div id="gameList"></div>
             </div>
         </div>

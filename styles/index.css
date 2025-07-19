@@ -1,5 +1,5 @@
 .container {
-    background: #9ab5fd;
+    background: #ffffff;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 10px 10px 30px #332c93, -10px -10px 30px #332c93;
@@ -20,6 +20,7 @@
     padding: 10px;
     border: none;
     background: none;
+    color: #0f4c81;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     cursor: pointer;
@@ -28,7 +29,8 @@
 }
 
 .tabs button.active {
-    background: #eaf0a5;
+    background: #0f4c81;
+    color: #ffffff;
 }
 
 .form {
@@ -50,7 +52,8 @@
 .button {
     margin-top: 10px;
     padding: 12px;
-    background:#eaf0a5;
+    background:#0f4c81;
+    color: #ffffff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -61,7 +64,7 @@
 }
 
 .button:hover {
-    background:rgb(243, 255, 23);
+    background:#196db5;
 }
 
 .alert {

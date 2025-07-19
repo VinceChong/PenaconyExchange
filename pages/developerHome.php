@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
-        <title> Community </title>
+        <title> Developer Home </title>
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/common.css"/>
-        <link rel = "stylesheet" href = "/PenaconyExchange/styles/community.css"/>
+        <link rel = "stylesheet" href = "/PenaconyExchange/styles/developerHome.css"/>
         <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
     </head>
 
