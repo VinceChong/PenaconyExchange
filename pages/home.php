@@ -35,6 +35,7 @@
 
         <div class = "pageWrapper">
             <div class="pageContent">
+                <?php include("../includes/subHeader.php"); ?>
                 <div id="gameList"></div>
             </div>
         </div>

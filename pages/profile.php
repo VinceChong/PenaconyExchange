@@ -33,7 +33,7 @@
         <div class = "pageWrapper">
             <div class="pageContent">
                 <div class = "profileContainer">
-                    <form action="/PenaconyExchange/db/updateProfile.php" method="POST" enctype="multipart/form-data">
+                    <form action="/PenaconyExchange/db/updateProfilePicture.php" method="POST" enctype="multipart/form-data">
                         <div class="profileCard">
                             <label for="profilePictureInput">
                                 <img src="<?php echo $profilePicture; ?>" class="profilePicture" id="profilePicturePreview">
@@ -45,7 +45,9 @@
                                 <p id = "email"> Email: <?php echo htmlspecialchars($email); ?></p>
                             </div>
                         </div>
+                    </form>
 
+                    <form action="/PenaconyExchange/db/updateProfile.php" method="POST" enctype="multipart/form-data">
                         <div class="formGroup">
                             <button type="button" onclick="toggleSection('usernameForm')">Modify Username</button>
                             <button type="button" onclick="toggleSection('emailForm')">Modify Email</button>
@@ -54,7 +56,7 @@
                         </div>
                     </form>
 
-                    <form action="logout.php" method="POST">
+                    <form action="/PenaconyExchange/db/logout.php" method="POST">
                         <button type="submit">Logout</button>
                     </form>
 
