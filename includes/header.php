@@ -4,9 +4,6 @@
     <ul>
         <li> <a href = "/PenaconyExchange/pages/home.php"> Home </a></li>
         <li> <a href = "/PenaconyExchange/pages/library.php"> Library </a></li>
-        <li> <a href = "/PenaconyExchange/pages/community.php"> Community </a></li>
-        <li> <a href = "/PenaconyExchange/pages/wishlist.php"> Wishlist </a></li>
-        <li> <a href = "/PenaconyExchange/pages/cart.php"> Cart </a></li>
         <li> <a href = "/PenaconyExchange/pages/profile.php"> Profile </a></li>
         
     </ul>
