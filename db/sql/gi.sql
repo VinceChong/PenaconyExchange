@@ -22,8 +22,8 @@ INSERT INTO GameCategory (gameId, categoryId) VALUES
 INSERT INTO AboutGame (gameId, detailedDesc, videoUrl, imageUrl) VALUES (
     4,
     'Step into Teyvat, a vast world teeming with life and elemental energy. Explore, fight, and uncover the mysteries of the Seven.',
-    'Nan',
-    '/PenaconyExchange/db/image/gi/gi_banner.jpg'
+    '/PenaconyExchange/db/assets/gi/gi_trailer.mp4',
+    '/PenaconyExchange/db/assets/gi/gi_banner.jpg'
 );
 
 -- Minimum System Requirement
@@ -54,10 +54,10 @@ INSERT INTO SystemRequirement (
 
 -- Video Trailer
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    4, 'video', 'Official Trailer', 'https://www.youtube.com/watch?v=HLUY1_hmC0w'
+    4, 'video', 'Official Trailer', '/PenaconyExchange/db/assets/gi/gi_trailer.mp4'
 );
 
 -- Screenshot
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    4, 'image', 'Gameplay Screenshot', 'https://genshin.hoyoverse.com/en/home'
+    4, 'image', 'Gameplay Screenshot', '/PenaconyExchange/db/assets/gi/gi_banner.jpg'
 );

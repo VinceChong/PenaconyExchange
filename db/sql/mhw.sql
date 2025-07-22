@@ -23,8 +23,8 @@ INSERT INTO GameCategory (gameId, categoryId) VALUES
 INSERT INTO AboutGame (gameId, detailedDesc, videoUrl, imageUrl) VALUES (
     2,
     'Monster Hunter: World lets you hunt gigantic monsters in epic environments using powerful weapons and tools. Join friends online for co-op missions.',
-    'https://www.youtube.com/watch?v=Ro6r15wzp2o',
-    '/PenaconyExchange/db/image/mhw/mhw_banner.jpg'
+    '/PenaconyExchange/db/assets/mhw/mhw_trailer.mp4',
+    '/PenaconyExchange/db/assets/mhw/mhw_banner.jpg'
 );
 
 -- Insert Minimum System Requirement
@@ -55,10 +55,10 @@ INSERT INTO SystemRequirement (
 
 -- Insert Game Video Trailer
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    2, 'video', 'Official Trailer', 'https://www.youtube.com/watch?v=Ro6r15wzp2o'
+    2, 'video', 'Official Trailer', '/PenaconyExchange/db/assets/mhw/mhw_trailer.mp4'
 );
 
 -- Insert Game Screenshot
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    2, 'image', 'Gameplay Screenshot', 'https://store.steampowered.com/app/582010/MONSTER_HUNTER_WORLD/'
+    2, 'image', 'Gameplay Screenshot', '/PenaconyExchange/db/assets/mhw/mhw_banner.mp4'
 );

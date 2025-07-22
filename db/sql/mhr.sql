@@ -23,8 +23,8 @@ INSERT INTO GameCategory (gameId, categoryId) VALUES
 INSERT INTO AboutGame (gameId, detailedDesc, videoUrl, imageUrl) VALUES (
     1,
     'Monster Hunter Rise: Sunbreak introduces the Master Rank, new monsters like Malzeno, and exciting new locales.',
-    'https://www.youtube.com/watch?v=TdCec2GRg-w',
-    '/PenaconyExchange/db/image/mhr/mhr_banner.jpg'  
+    '/PenaconyExchange/db/assets/mhr/mhr_trailer.mp4',
+    '/PenaconyExchange/db/assets/mhr/mhr_banner.jpg'  
 );
 
 -- Insert Minimum System Requirement
@@ -55,10 +55,10 @@ INSERT INTO SystemRequirement (
 
 -- Insert Game Video Trailer
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    1, 'video', 'Official Trailer', 'https://www.youtube.com/watch?v=AzplEyeMdzc'
+    1, 'video', 'Official Trailer', '/PenaconyExchange/db/assets/mhr/mhr_trailer.mp4'
 );
 
 -- Insert Game Screenshot
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    1, 'image', 'Gameplay Screenshot', 'https://store.steampowered.com/app/1446780/MONSTER_HUNTER_RISE/'  
+    1, 'image', 'Gameplay Screenshot', '/PenaconyExchange/db/assets/mhr/mhr_banner.jpg'  
 );

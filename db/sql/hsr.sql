@@ -23,8 +23,8 @@ INSERT INTO GameCategory (gameId, categoryId) VALUES
 INSERT INTO AboutGame (gameId, detailedDesc, videoUrl, imageUrl) VALUES (
     3,
     'Honkai: Star Rail takes players on a journey across the galaxy aboard the Astral Express. Enjoy tactical turn-based combat and an immersive sci-fi story.',
-    'https://www.youtube.com/watch?v=rXL5Ys7zExc',
-    '/PenaconyExchange/db/image/hsr/hsr_banner.jpg'
+    '/PenaconyExchange/db/assets/hsr/hsr_trailer.mp4',
+    '/PenaconyExchange/db/assets/hsr/hsr_banner.jpg'
 );
 
 -- Insert Minimum System Requirement
@@ -55,10 +55,10 @@ INSERT INTO SystemRequirement (
 
 -- Insert Game Video Trailer
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    3, 'video', 'Official Trailer', 'https://www.youtube.com/watch?v=rXL5Ys7zExc'
+    3, 'video', 'Official Trailer', '/PenaconyExchange/db/assets/hsr/hsr_trailer.mp4'
 );
 
 -- Insert Game Screenshot
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    3, 'image', 'Gameplay Screenshot', 'https://www.hoyolab.com/article/1778480'
+    3, 'image', 'Gameplay Screenshot', '/PenaconyExchange/db/assets/hsr/hsr_banner.jpg'
 );

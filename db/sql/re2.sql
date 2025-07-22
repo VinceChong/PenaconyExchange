@@ -24,8 +24,8 @@ INSERT INTO GameCategory (gameId, categoryId) VALUES
 INSERT INTO AboutGame (gameId, detailedDesc, videoUrl, imageUrl) VALUES (
     5,
     'Experience a terrifying reimagining of the classic horror game. Step into the shoes of Leon S. Kennedy and Claire Redfield as they attempt to escape Raccoon City in a stunningly recreated survival horror experience.',
-    'https://www.youtube.com/watch?v=xtxJtQa6VSw',
-    '/PenaconyExchange/db/image/re2/re2_banner.jpg'
+    '/PenaconyExchange/db/assets/re2/re2_trailer.mp4',
+    '/PenaconyExchange/db/assets/re2/re2_banner.jpg'
 );
 
 -- Minimum System Requirements
@@ -56,10 +56,10 @@ INSERT INTO SystemRequirement (
 
 -- Game Trailer
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    5, 'video', 'Resident Evil 2 Launch Trailer', 'https://www.youtube.com/watch?v=xtxJtQa6VSw'
+    5, 'video', 'Resident Evil 2 Launch Trailer', '/PenaconyExchange/db/assets/re2/re2_trailer.mp4'
 );
 
 -- Game Screenshot
 INSERT INTO GamePreview (gameId, type, title, url) VALUES (
-    5, 'image', 'Gameplay Screenshot', 'https://store.steampowered.com/app/883710/Resident_Evil_2/'
+    5, 'image', 'Gameplay Screenshot', '/PenaconyExchange/db/assets/re2/re2_banner.jpg'
 );
