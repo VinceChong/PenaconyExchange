@@ -22,7 +22,7 @@ INSERT INTO GameCategory (gameId, categoryId) VALUES
 INSERT INTO AboutGame (gameId, detailedDesc, videoUrl, imageUrl) VALUES (
     4,
     'Step into Teyvat, a vast world teeming with life and elemental energy. Explore, fight, and uncover the mysteries of the Seven.',
-    'https://www.youtube.com/watch?v=HLUY1_hmC0w',
+    'Nan',
     '/PenaconyExchange/db/image/gi/gi_banner.jpg'
 );
 
