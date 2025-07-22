@@ -1,41 +1,70 @@
 <?php
-session_start();
-include "db.php";
+    session_start();
+    include "db.php";
 
-$userId = $_SESSION["user"]["userId"];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profilePicture"])) {
-    $targetDir = "/PenaconyExchange/db/image/profile/";
-    $fileName = basename($_FILES["profilePicture"]["name"]);
-    $targetFile = $targetDir . $fileName;
-
-    // Validate file type
-    $allowedTypes = ["image/jpeg", "image/png", "image/jpg", "image/gif"];
-    if (!in_array($_FILES["profilePicture"]["type"], $allowedTypes)) {
-        echo "<script>alert('Only image files are allowed (JPG, PNG, GIF).'); window.history.back();</script>";
+    if (!isset($_SESSION["user"]["userId"])) {
+        echo json_encode(["success" => false, "message" => "User not logged in"]);
         exit;
     }
 
-    // Move uploaded file
-    if (move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $targetFile)) {
-        // Update database
-        $relativePath = "/PenaconyExchange/db/image/profile/" . $fileName;
-        $query = "UPDATE User SET profilePicture = ? WHERE userId = ?";
-        $statement = $connect->prepare($query);
-        $statement->bind_param("si", $relativePath, $userId);
+    $userId = $_SESSION["user"]["userId"];
 
-        if ($statement->execute()) {
-            // Update session data
-            $_SESSION["user"]["profilePicture"] = $relativePath;
+    if (!isset($connect)) {
+        echo json_encode(["success" => false, "message" => "Database connection error"]);
+        exit;
+    }
 
-            echo "<script>alert('Profile picture updated successfully.'); window.location.href='/PenaconyExchange/pages/profile.php';</script>";
+    if (isset($_FILES["profilePicture"]) && $_FILES["profilePicture"]["error"] === 0) {
+        $uploadDir = __DIR__ . "/assets/profile/";
+        $publicPath = "/PenaconyExchange/db/assets/profile/";
+        $fileName = time() . "_" . basename($_FILES["profilePicture"]["name"]);
+        $targetFilePath = $uploadDir . $fileName;
+        $path = $publicPath . $fileName;
+
+        $fileType = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+        $allowedTypes = ["jpg", "jpeg", "png", "gif", "webp"];
+
+        if (!in_array($fileType, $allowedTypes)) {
+            echo json_encode(["success" => false, "message" => "Invalid file type"]);
+            exit;
+        }
+
+        if (!file_exists($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        // Get old profile picture path
+        $oldQuery = $connect->prepare("SELECT profilePicture FROM User WHERE userId = ?");
+        $oldQuery->bind_param("i", $userId);
+        $oldQuery->execute();
+        $oldQuery->bind_result($oldProfilePath);
+        $oldQuery->fetch();
+        $oldQuery->close();
+
+        // Remove old file if it's not N/A or default
+        if ($oldProfilePath !== "N/A" && basename($oldProfilePath) !== "default.jpg") {
+            $oldFilePath = __DIR__ . str_replace("/PenaconyExchange/db", "", $oldProfilePath);
+            if (file_exists($oldFilePath)) {
+                unlink($oldFilePath);
+            }
+        }
+
+        if (move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $targetFilePath)) {
+            $stmt = $connect->prepare("UPDATE User SET profilePicture = ? WHERE userId = ?");
+            $stmt->bind_param("si", $path, $userId);
+
+            if ($stmt->execute()) {
+                $_SESSION["user"]["profilePicture"] = $path;
+                echo json_encode(["success" => true, "message" => "Profile picture updated", "path" => $path]);
+            } else {
+                echo json_encode(["success" => false, "message" => "Database update failed"]);
+            }
+
+            $stmt->close();
         } else {
-            echo "<script>alert('Failed to update profile picture in the database.'); window.history.back();</script>";
+            echo json_encode(["success" => false, "message" => "Failed to move uploaded file"]);
         }
     } else {
-        echo "<script>alert('Failed to upload the image.'); window.history.back();</script>";
+        echo json_encode(["success" => false, "message" => "No file uploaded or upload error"]);
     }
-} else {
-    echo "<script>alert('No image uploaded.'); window.history.back();</script>";
-}
 ?>

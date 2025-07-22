@@ -43,12 +43,63 @@ p#email {
     font-size: large;
 }
 
-.formGroup { 
+.buttonGroup { 
     display: flex;
     flex-direction: column;
     margin-top: 15px; 
     padding: 8px 12px;
 
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    max-width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-box h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color:#0f4c81;
+}
+
+.modal-box input[type="text"],input[type="email"],input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #000000;
+    border-radius: 6px;
+}
+
+.modal-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f4c81;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-box button:hover {
+    background-color: #196db5;
 }
 
 button {
@@ -65,7 +116,4 @@ button {
 button:hover {
     background:#196db5;
     color: #ffffff;
-}
-.hidden {
-    display: none;
 }

@@ -9,11 +9,9 @@
     $profilePicture = $user["profilePicture"];
 
     if($profilePicture === "N/A" || empty($profilePicture)){
-        $profilePicture = "/PenaconyExchange/db/image/profile/default.jpg";
+        $profilePicture = "/PenaconyExchange/db/assets/profile/default.jpg";
     }
 ?>
-
-
 
 <!DOCTYPE html>
 
@@ -46,13 +44,12 @@
                             </div>
                         </div>
                     </form>
-
+                    
                     <form action="/PenaconyExchange/db/updateProfile.php" method="POST" enctype="multipart/form-data">
-                        <div class="formGroup">
+                        <div class="buttonGroup">
                             <button type="button" onclick="toggleSection('usernameForm')">Modify Username</button>
                             <button type="button" onclick="toggleSection('emailForm')">Modify Email</button>
                             <button type="button" onclick="toggleSection('passwordForm')">Modify Password</button>
-                            <button type="submit">Save Changes</button>
                         </div>
                     </form>
 
@@ -60,36 +57,52 @@
                         <button type="submit">Logout</button>
                     </form>
 
-                    <!-- Username Form -->
-                    <div class="profile-card hidden" id="usernameForm">
-                        <form action="updateProfile.php" method="POST">
-                            <label>New Username:</label>
-                            <input type="text" name="username" required>
-                            <button type="submit">Update Username</button>
-                        </form>
+                    <!-- Username form -->
+                    <div class="formContainer hidden" id="usernameForm">
+                        <div id="usernameModalOverlay" class="modal-overlay hidden">
+                            <div class="modal-box" onclick="event.stopPropagation()">
+                                <form action="/PenaconyExchange/db/updateUsername.php" method="POST">
+                                    <h3> Change Username </h3>
+                                    <label> New Username </label>
+                                    <input type="text" name="username" placeholder="Enter new username" required>
+                                    <button type="submit"> Update Username </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Email Form -->
-                    <div class="profile-card hidden" id="emailForm">
-                        <form action="updateProfile.php" method="POST">
-                            <label>New Email:</label>
-                            <input type="email" name="gmail" required>
-                            <button type="submit">Update Email</button>
-                        </form>
+                    <!-- Email form -->
+                    <div class="formContainer hidden" id="emailForm">
+                        <div id="emailModalOverlay" class="modal-overlay hidden">
+                            <div class="modal-box" onclick="event.stopPropagation()">
+                                <form action="/PenaconyExchange/db/updateEmail.php" method="POST">
+                                    <h3> Change Email </h3>
+                                    <label> New Password </label>
+                                    <input type="email" name="email" placeholder="Enter new email" required>
+                                    <button type="submit"> Update Email </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Password Form -->
-                    <div class="profile-card hidden" id="passwordForm">
-                        <form action="updateProfile.php" method="POST">
-                            <label>Current Password:</label>
-                            <input type="password" name="currentPassword" required>
-                            <label>New Password:</label>
-                            <input type="password" name="newPassword" required>
-                            <label>Confirm New Password:</label>
-                            <input type="password" name="confirmNewPassword" required>
-                            <button type="submit">Update Password</button>
-                        </form>
+                    <!-- Password form -->
+                    <div class="formContainer hidden" id="passwordForm">
+                        <div id="passwordModalOverlay" class="modal-overlay hidden">
+                            <div class="modal-box" onclick="event.stopPropagation()">
+                                <form action="/PenaconyExchange/db/updatePassword.php" method="POST">
+                                    <h3>Change Password</h3>
+                                    <label> Current Password </label>
+                                    <input type="password" name="currentPassword" required>
+                                    <label> New Password </label>
+                                    <input type="password" name="newPassword" required>
+                                    <label> Confirm New Password </label>
+                                    <input type="password" name="confirmNewPassword" required>
+                                    <button type="submit"> Update Password </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

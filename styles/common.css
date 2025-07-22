@@ -40,6 +40,10 @@ input {
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
 @media (max-width: 480px) {
     .container {
         padding: 20px;
