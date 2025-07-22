@@ -6,7 +6,7 @@ INSERT INTO Game (
 ) VALUES (
     'Monster Hunter Rise: Sunbreak',
     'An expansion to Monster Hunter Rise, bringing new monsters, quests, and a master rank difficulty.',
-    '/PenaconyExchange/db/image/mhr/mhr_main.jpg',  
+    '/PenaconyExchange/db/assets/mhr/mhr_main.jpg',  
     204.90,
     '2022-06-30',
     1,

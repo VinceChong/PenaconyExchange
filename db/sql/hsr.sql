@@ -6,7 +6,7 @@ INSERT INTO Game (
 ) VALUES (
     'Honkai: Star Rail',
     'Honkai: Star Rail is a space fantasy RPG with turn-based combat and a rich sci-fi story.',
-    '/PenaconyExchange/db/image/hsr/hsr_main.jpg',
+    '/PenaconyExchange/db/assets/hsr/hsr_main.jpg',
     0.00,
     '2023-04-26',
     2,  

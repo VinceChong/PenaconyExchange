@@ -6,7 +6,7 @@ INSERT INTO Game (
 ) VALUES (
     'Monster Hunter: World',
     'Battle gigantic monsters in epic locales. Monster Hunter: World delivers a vast open-world hunting experience.',
-    '/PenaconyExchange/db/image/mhw/mhw_main.jpg',
+    '/PenaconyExchange/db/assets/mhw/mhw_main.jpg',
     169.80,
     '2018-01-26',
     1,  -- Capcom publisherId

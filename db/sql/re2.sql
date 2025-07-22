@@ -6,7 +6,7 @@ INSERT INTO Game (
 ) VALUES (
     'Resident Evil 2',
     'A remake of the classic survival horror game, bringing terrifying visuals and immersive storytelling.',
-    '/PenaconyExchange/db/image/re2/re2_main.jpg',
+    '/PenaconyExchange/db/assets/re2/re2_main.jpg',
     135.90,
     '2019-01-25',
     1, -- Capcom as both publisher & developer
