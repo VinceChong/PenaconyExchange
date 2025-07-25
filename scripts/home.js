@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("/PenaconyExchange/db/retrieveGames.php")
+    fetch("/PenaconyExchange/db/backend/retrieveGames.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("HTTP status " + response.status);

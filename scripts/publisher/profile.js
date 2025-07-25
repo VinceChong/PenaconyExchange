@@ -12,7 +12,7 @@ function previewImage(event) {
         const formData = new FormData();
         formData.append('profilePicture', input.files[0]);
 
-        fetch("/PenaconyExchange/db/backend/updateProfilePicture.php", {
+        fetch("/PenaconyExchange/db/backend/publisher/updateProfileLogo.php", {
             method: "POST",
             body: formData,
         })

@@ -1,8 +1,5 @@
 use PenaconyExchange;
 
--- Insert Developer
-INSERT INTO Developer (developerName) VALUES ("Capcom"), ("Hoyoverse");
-
 -- Insert Publisher
 INSERT INTO Publisher (publisherName) VALUES ("Capcom"), ("Hoyoverse");
 

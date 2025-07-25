@@ -31,7 +31,7 @@
         <div class = "pageWrapper">
             <div class="pageContent">
                 <div class = "profileContainer">
-                    <form action="/PenaconyExchange/db/backend/updateProfilePicture.php" method="POST" enctype="multipart/form-data">
+                    <form action="/PenaconyExchange/db/updateProfilePicture.php" method="POST" enctype="multipart/form-data">
                         <div class="profileCard">
                             <label for="profilePictureInput">
                                 <img src="<?php echo $profilePicture; ?>" class="profilePicture" id="profilePicturePreview">
@@ -45,14 +45,15 @@
                         </div>
                     </form>
                     
-                    <div class="buttonGroup">
-                        <button type="button" onclick="toggleSection('usernameForm')">Modify Username</button>
-                        <button type="button" onclick="toggleSection('emailForm')">Modify Email</button>
-                        <button type="button" onclick="toggleSection('passwordForm')">Modify Password</button>
-                    </div>
+                    <form action="/PenaconyExchange/db/updateProfile.php" method="POST" enctype="multipart/form-data">
+                        <div class="buttonGroup">
+                            <button type="button" onclick="toggleSection('usernameForm')">Modify Username</button>
+                            <button type="button" onclick="toggleSection('emailForm')">Modify Email</button>
+                            <button type="button" onclick="toggleSection('passwordForm')">Modify Password</button>
+                        </div>
+                    </form>
 
-
-                    <form action="/PenaconyExchange/db/backend/logout.php" method="POST">
+                    <form action="/PenaconyExchange/db/logout.php" method="POST">
                         <button type="submit">Logout</button>
                     </form>
 
@@ -60,7 +61,7 @@
                     <div class="formContainer hidden" id="usernameForm">
                         <div id="usernameModalOverlay" class="modal-overlay hidden">
                             <div class="modal-box" onclick="event.stopPropagation()">
-                                <form action="/PenaconyExchange/db/backend/updateUsername.php" method="POST">
+                                <form action="/PenaconyExchange/db/updateUsername.php" method="POST">
                                     <h3> Change Username </h3>
                                     <label> New Username </label>
                                     <input type="text" name="username" placeholder="Enter new username" required>
@@ -74,7 +75,7 @@
                     <div class="formContainer hidden" id="emailForm">
                         <div id="emailModalOverlay" class="modal-overlay hidden">
                             <div class="modal-box" onclick="event.stopPropagation()">
-                                <form action="/PenaconyExchange/db/backend/updateEmail.php" method="POST">
+                                <form action="/PenaconyExchange/db/updateEmail.php" method="POST">
                                     <h3> Change Email </h3>
                                     <label> New Password </label>
                                     <input type="email" name="email" placeholder="Enter new email" required>
@@ -88,7 +89,7 @@
                     <div class="formContainer hidden" id="passwordForm">
                         <div id="passwordModalOverlay" class="modal-overlay hidden">
                             <div class="modal-box" onclick="event.stopPropagation()">
-                                <form action="/PenaconyExchange/db/backend/updatePassword.php" method="POST">
+                                <form action="/PenaconyExchange/db/updatePassword.php" method="POST">
                                     <h3>Change Password</h3>
                                     <label> Current Password </label>
                                     <input type="password" name="currentPassword" required>

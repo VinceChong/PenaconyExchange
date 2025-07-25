@@ -103,3 +103,17 @@
     color: inherit;
     cursor: pointer;
 }
+
+.changeUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#0f4c81;
+    font-weight: bold;
+
+}
+
+.changeUser a:hover{
+    color:#196db5;
+    
+}

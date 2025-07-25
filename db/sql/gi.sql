@@ -2,14 +2,13 @@ USE PenaconyExchange;
 
 -- Insert Game
 INSERT INTO Game (
-    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId, developerId
+    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId
 ) VALUES (
     'Genshin Impact',
     'Genshin Impact is an open-world action RPG where players explore the fantasy land of Teyvat.',
     '/PenaconyExchange/db/assets/gi/gi_main.jpg',
     0.00,
     '2020-09-28',
-    2, 
     2
 );
 

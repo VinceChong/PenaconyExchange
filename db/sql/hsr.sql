@@ -2,15 +2,14 @@ USE PenaconyExchange;
 
 -- Insert Game
 INSERT INTO Game (
-    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId, developerId
+    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId
 ) VALUES (
     'Honkai: Star Rail',
     'Honkai: Star Rail is a space fantasy RPG with turn-based combat and a rich sci-fi story.',
     '/PenaconyExchange/db/assets/hsr/hsr_main.jpg',
     0.00,
     '2023-04-26',
-    2,  
-    2  
+    2
 );
 
 -- Link Game to Categories (RPG, Turn-Based)

@@ -6,9 +6,8 @@ SELECT
     g.price,
     g.releaseDate,
     
-    -- Publisher & Developer
+    -- Publisher
     p.publisherName,
-    d.developerName,
     
     -- About Game
     ag.detailedDesc,
@@ -44,7 +43,6 @@ FROM Game g
 
 -- JOIN with Publisher and Developer
 JOIN Publisher p ON g.publisherId = p.publisherId
-JOIN Developer d ON g.developerId = d.developerId
 
 -- JOIN with AboutGame
 LEFT JOIN AboutGame ag ON g.gameId = ag.gameId

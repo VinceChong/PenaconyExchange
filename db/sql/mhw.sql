@@ -2,15 +2,14 @@ USE PenaconyExchange;
 
 -- Insert Game
 INSERT INTO Game (
-    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId, developerId
+    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId
 ) VALUES (
     'Monster Hunter: World',
     'Battle gigantic monsters in epic locales. Monster Hunter: World delivers a vast open-world hunting experience.',
     '/PenaconyExchange/db/assets/mhw/mhw_main.jpg',
     169.80,
     '2018-01-26',
-    1,  -- Capcom publisherId
-    1   -- Capcom developerId
+    1
 );
 
 -- Link Game to Categories (Action, RPG)

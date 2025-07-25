@@ -2,14 +2,13 @@ USE PenaconyExchange;
 
 -- Insert Game
 INSERT INTO Game (
-    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId, developerId
+    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId
 ) VALUES (
     'Resident Evil 2',
     'A remake of the classic survival horror game, bringing terrifying visuals and immersive storytelling.',
     '/PenaconyExchange/db/assets/re2/re2_main.jpg',
     135.90,
     '2019-01-25',
-    1, -- Capcom as both publisher & developer
     1
 );
 

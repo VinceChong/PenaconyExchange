@@ -2,14 +2,13 @@ use PenaconyExchange;
 
 -- Insert Game
 INSERT INTO Game (
-    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId, developerId
+    gameTitle, gameDesc, mainPicture, price, releaseDate, publisherId
 ) VALUES (
     'Monster Hunter Rise: Sunbreak',
     'An expansion to Monster Hunter Rise, bringing new monsters, quests, and a master rank difficulty.',
     '/PenaconyExchange/db/assets/mhr/mhr_main.jpg',  
     204.90,
     '2022-06-30',
-    1,
     1
 );
 

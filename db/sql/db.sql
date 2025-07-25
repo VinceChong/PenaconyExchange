@@ -19,12 +19,10 @@ CREATE TABLE IF NOT EXISTS ContactUs (
 
 CREATE TABLE IF NOT EXISTS Publisher (
     publisherId INT AUTO_INCREMENT PRIMARY KEY,
-    publisherName VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS Developer (
-    developerId INT AUTO_INCREMENT PRIMARY KEY,
-    developerName VARCHAR(50) NOT NULL
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    logo VARCHAR(255) DEFAULT "N/A"
 );
 
 CREATE TABLE IF NOT EXISTS IsFollowing (
@@ -48,9 +46,7 @@ CREATE TABLE IF NOT EXISTS Game (
     price DOUBLE NOT NULL DEFAULT 0,
     releaseDate DATE NOT NULL,
     publisherId INT NOT NULL,
-    developerId INT NOT NULL,
-    FOREIGN KEY (publisherId) REFERENCES Publisher(publisherId),
-    FOREIGN KEY (developerId) REFERENCES Developer(developerId)
+    FOREIGN KEY (publisherId) REFERENCES Publisher(publisherId)
 );
 
 CREATE TABLE IF NOT EXISTS GameCategory (

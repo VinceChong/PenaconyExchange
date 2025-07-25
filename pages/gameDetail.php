@@ -1,6 +1,6 @@
 <?php
-    include "../db/db.php";
-    include "../db/retrieveGameDetail.php";
+    include "../db/backend/db.php";
+    include "../db/backend/retrieveGameDetail.php";
 
     $gameId = $_GET['gameId'] ?? 0;
     $gameDetails = getGameDetail($connect, $gameId);
@@ -39,8 +39,6 @@
                 
                 <div class = "details">
                     <h1> <?= $gameDetails['gameTitle'] ?> </h1>
-                    <p><strong>Developer:</strong> <?= $gameDetails['developerName'] ?></p>
-                    <p><strong>Publisher:</strong> <?= $gameDetails['publisherName'] ?></p>
                     <p><strong>Release Date:</strong> <?= $gameDetails['releaseDate'] ?></p>
                     <p><strong>Categories:</strong> <?= $gameDetails['categories'] ?></p>
                     <div class="price">RM<?= number_format($gameDetails['price'], 2) ?></div>

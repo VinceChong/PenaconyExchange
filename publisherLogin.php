@@ -38,37 +38,37 @@
                 <button id = "signUpTab"> Sign Up </button>
             </div>
 
-            <form id = "loginForm" class = "form active" action = "/PenaconyExchange/db/backend/login.php" method = "POST">
+            <form id = "loginForm" class = "form active" action = "/PenaconyExchange/db/backend/publisher/publisherLogin.php" method = "POST">
                 <div class="form-group">
-                    <label for = "email"> Email </label>
+                    <label for = "email"> Publisher Email </label>
                     <input type = "email" name = "email" id = "email" placeholder = "Songshu@gmail.com" required/>
                 </div>
 
                 <div class="form-group">
-                    <label for = "password"> Password </label>
+                    <label for = "password"> Publisher Password </label>
                     <input type = "password" name = "password" id = "password" placeholder = "Password" required/>
                 </div>
 
                 <div class = "changeUser">
-                    <p> <a href = "/PenaconyExchange/publisherLogin.php">Login/Sign up As Publisher</a> </p>
+                    <p> <a href = "/PenaconyExchange/">Login/Sign up As User</a> </p>
                 </div>
 
                 <button type = "submit" class = "button"> Login </button>
             </form>
 
-            <form id = "signUpForm" class = "form"  action = "/PenaconyExchange/db/backend/signUp.php" method = "POST">
+            <form id = "signUpForm" class = "form"  action = "/PenaconyExchange/db/backend/publisher/publisherSignup.php" method = "POST">
                 <div class="form-group">    
-                    <label for = "username"> Username </label>
+                    <label for = "username"> Publisher Username </label>
                     <input type = "text" name = "username" id = "username" placeholder = "Songshu" required/>
                 </div>
 
                 <div class="form-group">
-                    <label for = "email"> Email </label>
+                    <label for = "email"> Publisher Email </label>
                     <input type = "email" name = "email" id = "email" placeholder = "Songshu@gmail.com" required/>
                 </div>
 
                 <div class="form-group">
-                    <label for = "password"> Password </label>
+                    <label for = "password"> Publisher Password </label>
                     <input type = "password" name = "password" id = "password" placeholder = "Password" required/>
                 </div>
                 
@@ -78,7 +78,7 @@
                 </div>
                 
                 <div class = "changeUser">
-                    <p> <a href = "/PenaconyExchange/publisherLogin.php">Login/Sign up As Publisher</a> </p>
+                    <p> <a href = "/PenaconyExchange/">Login/Sign up As User</a> </p>
                 </div>
 
                 <button type = "submit" class = "button"> Sign Up </button>
@@ -86,6 +86,6 @@
         </div>
         
 
-        <script src = "/PenaconyExchange/scripts/index.js"></script>
+        <script src = "/PenaconyExchange/scripts/publisher/publisherLogin.js"></script>
     </body>
 </html>

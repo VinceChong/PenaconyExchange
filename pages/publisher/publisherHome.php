@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <?php include("../includes/header.php"); ?>
+        <?php include("../../includes/publisherHeader.php"); ?>
 
         <div class = "pageWrapper">
             <div class="pageContent">
@@ -19,7 +19,7 @@
             </div>
         </div>
         
-        <?php include("../includes/footer.php"); ?>
+        <?php include("../../includes/footer.php"); ?>
         <script src = "/PenaconyExchange/scripts/community.js"></script>
     </body>
 </html>
