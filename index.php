@@ -4,88 +4,43 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
-        <title> Penacony </title>
+        <title> Home </title>
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/common.css"/>
-        <link rel = "stylesheet" href = "/PenaconyExchange/styles/index.css"/>
+        <link rel = "stylesheet" href = "/PenaconyExchange/styles/home.css"/>
         <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
+
+        <style>
+
+            .page-content {
+                background: #0f4c81;
+            }
+            .game-card {
+                display: inline-block;
+                margin: 20px;
+                text-align: center;
+                color: #ffffff;
+                font-family: Roboto;
+            }
+
+            .game-card img {
+                width: 200px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        </style>
     </head>
 
-    <body style = "display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <?php 
-            $message = "";
-            $type = "";
+    <body>
+        <?php include("./includes/header.php"); ?>
 
-            if (isset($_GET["error"])) {
-                $message = htmlspecialchars($_GET["error"]);
-                $type = "error";
-
-            } elseif (isset($_GET["success"])) {
-                $message = htmlspecialchars($_GET["success"]);
-                $type = "success";
-            }
-        ?>
-
-        <?php if ($message): ?>
-            <div class = "alert <?= $type ?>" id = "alertBox">
-                <span class = "closeButton" onclick = "document.getElementById('alertBox').style.display='none';">&times;</span>
-                    <p> <?= $message ?> </p>
+        <div class = "pageWrapper">
+            <div class="pageContent">
+                <?php include("./includes/subHeader.php"); ?>
+                <div id="gameList"></div>
             </div>
-        <?php endif; ?>
-
-        <div class = "container">
-            <div class = "tabs">
-                <button id = "loginTab" class = "active"> Login </button>
-                <button id = "signUpTab"> Sign Up </button>
-            </div>
-
-            <form id = "loginForm" class = "form active" action = "/PenaconyExchange/db/backend/login.php" method = "POST">
-                <div class="form-group">
-                    <label for = "email"> Email </label>
-                    <input type = "email" name = "email" id = "email" placeholder = "Songshu@gmail.com" required/>
-                </div>
-
-                <div class="form-group">
-                    <label for = "password"> Password </label>
-                    <input type = "password" name = "password" id = "password" placeholder = "Password" required/>
-                </div>
-
-                <div class = "changeUser">
-                    <p> <a href = "/PenaconyExchange/publisherLogin.php">Login/Sign up As Publisher</a> </p>
-                </div>
-
-                <button type = "submit" class = "button"> Login </button>
-            </form>
-
-            <form id = "signUpForm" class = "form"  action = "/PenaconyExchange/db/backend/signUp.php" method = "POST">
-                <div class="form-group">    
-                    <label for = "username"> Username </label>
-                    <input type = "text" name = "username" id = "username" placeholder = "Songshu" required/>
-                </div>
-
-                <div class="form-group">
-                    <label for = "email"> Email </label>
-                    <input type = "email" name = "email" id = "email" placeholder = "Songshu@gmail.com" required/>
-                </div>
-
-                <div class="form-group">
-                    <label for = "password"> Password </label>
-                    <input type = "password" name = "password" id = "password" placeholder = "Password" required/>
-                </div>
-                
-                <div class="form-group">
-                    <label for = "confirmPassword"> Confirm Password </label>
-                    <input type = "password" name = "confirmPassword" id = "confirmPassword" placeholder = "Confirm Password" required/>
-                </div>
-                
-                <div class = "changeUser">
-                    <p> <a href = "/PenaconyExchange/publisherLogin.php">Login/Sign up As Publisher</a> </p>
-                </div>
-
-                <button type = "submit" class = "button"> Sign Up </button>
-            </form>
         </div>
-        
 
-        <script src = "/PenaconyExchange/scripts/index.js"></script>
+        <?php include("./includes/footer.php"); ?>
+        <script src = "/PenaconyExchange/scripts/home.js"></script>
     </body>
 </html>

@@ -20,11 +20,11 @@
             header("Location: /PenaconyExchange/pages/publisher/publisherHome.php");
             exit;
         } else {
-            header("Location: /PenaconyExchange/publisherLogin.php?error=".urlencode("Invalid password, please try again"));
+            header("Location: /PenaconyExchange/pages/publisher/publisherLogin.php?error=".urlencode("Invalid password, please try again"));
             exit;
         }
     } else {
-        header("Location: /PenaconyExchange/publisherLogin.php?error=".urlencode("No publisher found. Please try again"));
+        header("Location: /PenaconyExchange/pages/publisher/publisherLogin.php?error=".urlencode("No publisher found. Please try again"));
         exit;
     }
 ?>

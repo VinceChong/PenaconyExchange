@@ -17,14 +17,14 @@
 
         if(password_verify($password, $user["password"])){
             $_SESSION["user"] = $user;
-            header("Location: /PenaconyExchange/pages/home.php");
+            header("Location: /PenaconyExchange/index.php");
             exit;
         } else {
-            header("Location: /PenaconyExchange/index.php?error=".urlencode("Invalid password, please try again"));
+            header("Location: /PenaconyExchange/pages/authentication.php?error=".urlencode("Invalid password, please try again"));
             exit;
         }
     } else {
-        header("Location: /PenaconyExchange/index.php?error=".urlencode("No user found. Please try again"));
+        header("Location: /PenaconyExchange/pages/authentication.php?error=".urlencode("No user found. Please try again"));
         exit;
     }
 ?>

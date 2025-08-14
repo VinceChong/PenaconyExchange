@@ -6,7 +6,7 @@
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
         <title> Penacony </title>
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/common.css"/>
-        <link rel = "stylesheet" href = "/PenaconyExchange/styles/index.css"/>
+        <link rel = "stylesheet" href = "/PenaconyExchange/styles/authentication.css"/>
         <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
     </head>
 
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class = "changeUser">
-                    <p> <a href = "/PenaconyExchange/">Login/Sign up As User</a> </p>
+                    <p> <a href = "/PenaconyExchange/pages/authentication.php">Login/Sign up As User</a> </p>
                 </div>
 
                 <button type = "submit" class = "button"> Login </button>
@@ -78,7 +78,7 @@
                 </div>
                 
                 <div class = "changeUser">
-                    <p> <a href = "/PenaconyExchange/">Login/Sign up As User</a> </p>
+                    <p> <a href = "/PenaconyExchange/pages/authentication.php">Login/Sign up As User</a> </p>
                 </div>
 
                 <button type = "submit" class = "button"> Sign Up </button>

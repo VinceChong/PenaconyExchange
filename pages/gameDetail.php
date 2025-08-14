@@ -3,7 +3,16 @@
     include "../db/backend/retrieveGameDetail.php";
 
     $gameId = $_GET['gameId'] ?? 0;
-    $gameDetails = getGameDetail($connect, $gameId);
+    $gameDetails = retrieveGameDetail($connect, $gameId);
+
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if (!isset($_SESSION["user"])) {
+        header("Location: /PenaconyExchange/pages/authentication.php");
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>

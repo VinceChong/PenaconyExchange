@@ -1,5 +1,12 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if (!isset($_SESSION["publisher"])) {
+        header("Location: /PenaconyExchange/pages/publisher/publisherLogin.php");
+        exit;
+    }
 
     // Get publisher data
     $publisher = $_SESSION["publisher"];
@@ -56,47 +63,61 @@
                         <button type="submit">Logout</button>
                     </form>
 
-                    <!-- Publisher name form -->
+                    <!-- Change Publisher Name -->
                     <div class="formContainer hidden" id="usernameForm">
-                        <div id="usernameModalOverlay" class="modal-overlay hidden">
+                        <div class="modal-overlay hidden" id="usernameModalOverlay" role="dialog" aria-modal="true">
                             <div class="modal-box" onclick="event.stopPropagation()">
-                                <form action="/PenaconyExchange/db/backend/publisher/updateUsername.php" method="POST">
-                                    <h3> Change Publisher Name </h3>
-                                    <label> New Publisher Name </label>
-                                    <input type="text" name="username" placeholder="Enter new publisher name" required>
-                                    <button type="submit"> Update Publisher Name </button>
+                                <form action="/PenaconyExchange/db/backend/publisher/updateUsername.php" method="POST" novalidate>
+                                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? ''; ?>">
+                                    
+                                    <h3>Change Publisher Name</h3>
+                                    
+                                    <label for="username">New Publisher Name</label>
+                                    <input type="text" id="username" name="username" placeholder="Enter new publisher name" required autocomplete="off">
+                                    
+                                    <button type="submit">Update Publisher Name</button>
                                 </form>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Email form -->
+                    <!-- Change Publisher Email -->
                     <div class="formContainer hidden" id="emailForm">
-                        <div id="emailModalOverlay" class="modal-overlay hidden">
+                        <div class="modal-overlay hidden" id="emailModalOverlay" role="dialog" aria-modal="true">
                             <div class="modal-box" onclick="event.stopPropagation()">
-                                <form action="/PenaconyExchange/db/backend/publisher/updateEmail.php" method="POST">
-                                    <h3> Change Publisher Email </h3>
-                                    <label> New Publisher Password </label>
-                                    <input type="email" name="email" placeholder="Enter new publisher email" required>
-                                    <button type="submit"> Update Publisher Email </button>
+                                <form action="/PenaconyExchange/db/backend/publisher/updateEmail.php" method="POST" novalidate>
+                                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? ''; ?>">
+                                    
+                                    <h3>Change Publisher Email</h3>
+                                    
+                                    <label for="email">New Publisher Email</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter new publisher email" required autocomplete="email">
+                                    
+                                    <button type="submit">Update Publisher Email</button>
                                 </form>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Password form -->
+                    <!-- Change Password -->
                     <div class="formContainer hidden" id="passwordForm">
-                        <div id="passwordModalOverlay" class="modal-overlay hidden">
+                        <div class="modal-overlay hidden" id="passwordModalOverlay" role="dialog" aria-modal="true">
                             <div class="modal-box" onclick="event.stopPropagation()">
-                                <form action="/PenaconyExchange/db/backend/publisher/updatePassword.php" method="POST">
+                                <form action="/PenaconyExchange/db/backend/publisher/updatePassword.php" method="POST" novalidate>
+                                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?? ''; ?>">
+                                    
                                     <h3>Change Password</h3>
-                                    <label> Current Password </label>
-                                    <input type="password" name="currentPassword" required>
-                                    <label> New Password </label>
-                                    <input type="password" name="newPassword" required>
-                                    <label> Confirm New Password </label>
-                                    <input type="password" name="confirmNewPassword" required>
-                                    <button type="submit"> Update Password </button>
+                                    
+                                    <label for="currentPassword">Current Password</label>
+                                    <input type="password" id="currentPassword" name="currentPassword" required autocomplete="current-password">
+                                    
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" id="newPassword" name="newPassword" required autocomplete="new-password">
+                                    
+                                    <label for="confirmNewPassword">Confirm New Password</label>
+                                    <input type="password" id="confirmNewPassword" name="confirmNewPassword" required autocomplete="new-password">
+                                    
+                                    <button type="submit">Update Password</button>
                                 </form>
                             </div>
                         </div>
@@ -106,7 +127,7 @@
             </div>
         </div>
         
-        <?php include("../includes/footer.php"); ?>
+        <?php include("../../includes/footer.php"); ?>
         <script src = "/PenaconyExchange/scripts/publisher/profile.js"></script>
     </body>
 </html>

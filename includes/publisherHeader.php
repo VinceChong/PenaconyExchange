@@ -1,9 +1,22 @@
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Check publisher log in
+    if (isset($_SESSION["publisher"])){
+        $link = "publisherProfile.php";
+    } else {
+        $link = "publisherLogin.php";
+    }
+?>
+
 <header>
     <h2> PENACONY EXCHANGE </h2>
 
     <ul>
         <li> <a href = "/PenaconyExchange/pages/publisher/publisherHome.php"> Home </a></li>
-        <li> <a href = "/PenaconyExchange/pages/publisher/publisherProfile.php"> Profile </a></li>
+        <li> <a href = "/PenaconyExchange/pages/publisher/<?php echo $link; ?>"> Profile </a></li>
         
     </ul>
 

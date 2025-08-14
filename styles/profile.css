@@ -117,3 +117,31 @@ button:hover {
     background:#196db5;
     color: #ffffff;
 }
+
+.modal-box h3 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0f4c81; /* Matches your site header color */
+}
+
+.modal-box label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: #0f4c81;
+    margin-bottom: 6px;
+}
+
+.modal-box input[type="text"],
+.modal-box input[type="email"],
+.modal-box input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}

@@ -17,11 +17,11 @@
     $statement->bind_param("sss", $username, $email, $encrypted);
 
     if ($statement->execute()){
-        header("Location: /PenaconyExchange/publisherLogin.php?success=".urlencode("Sign up successful! You can now log in."));
+        header("Location: /PenaconyExchange/pages/publisher/publisherLogin.php?success=".urlencode("Sign up successful! You can now log in."));
         exit;
     } else {
         $message = "Error: ".$statement->error;
-        header("Location: /PenaconyExchange/publisherLogin.php?error=".urlencode($message));
+        header("Location: /PenaconyExchange/pages/publisher/publisherLogin.php?error=".urlencode($message));
         exit;
     }
 ?>

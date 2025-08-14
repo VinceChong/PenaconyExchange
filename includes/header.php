@@ -1,10 +1,23 @@
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Check user log in
+    if (isset($_SESSION["user"])){
+        $link = "profile.php";
+    } else {
+        $link = "authentication.php";
+    }
+?>
+
 <header>
     <h2> PENACONY EXCHANGE </h2>
 
     <ul>
-        <li> <a href = "/PenaconyExchange/pages/home.php"> Home </a></li>
+        <li> <a href = "/PenaconyExchange/"> Home </a></li>
         <li> <a href = "/PenaconyExchange/pages/library.php"> Library </a></li>
-        <li> <a href = "/PenaconyExchange/pages/profile.php"> Profile </a></li>
+        <li> <a href = "/PenaconyExchange/pages/<?php echo $link; ?>"> Profile </a></li>
         
     </ul>
 
