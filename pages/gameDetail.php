@@ -3,7 +3,7 @@
     include "../db/backend/retrieveGameDetail.php";
 
     $gameId = $_GET['gameId'] ?? 0;
-    $gameDetails = retrieveGameDetail($connect, $gameId);
+    $gameDetails = retrieveGameDetails($connect, $gameId);
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();

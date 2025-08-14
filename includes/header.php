@@ -14,7 +14,7 @@
 <header>
     <h2> PENACONY EXCHANGE </h2>
 
-    <ul>
+    <ul id = "headerList">
         <li> <a href = "/PenaconyExchange/"> Home </a></li>
         <li> <a href = "/PenaconyExchange/pages/library.php"> Library </a></li>
         <li> <a href = "/PenaconyExchange/pages/<?php echo $link; ?>"> Profile </a></li>
@@ -37,6 +37,7 @@
         left: 0;
         box-sizing: border-box;
         flex-wrap: wrap; 
+        z-index: 99;
     }
 
     header h2 {
@@ -44,7 +45,7 @@
         flex-shrink: 0;
     }
 
-    header ul {
+    header ul#headerList {
         list-style-type: none;
         display: flex;
         flex-wrap: wrap; 
@@ -52,7 +53,7 @@
         margin: 0;
     }
 
-    header ul li {
+    header ul#headerList li {
         margin: 0 10px;
         white-space: nowrap;
     }

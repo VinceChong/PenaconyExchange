@@ -10,7 +10,7 @@
         <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
     </head>
 
-    <body style = "display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <body style = "display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
         <?php 
             $message = "";
             $type = "";
