@@ -1,0 +1,216 @@
+/* ===== Library-specific overrides ===== */
+.library .pageContent {
+  background: #1b2838 !important; /* Steam-like dark background */
+  color: #ffffff;
+  padding-top: 0; /* Remove large gap from top */
+}
+
+/* Layout for sidebar and main content */
+.pageWrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: #1b2838;
+  color: #ffffff;
+  height: 100vh;
+}
+
+.library__sidebar {
+  flex: 1;
+  max-width: 250px;
+  background-color: #2b2b2b;
+  padding: 20px;
+  color: #ffffff;
+  overflow-y: auto;
+}
+
+.library__main {
+  flex: 3;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ===== Sidebar ===== */
+.library__sidebar {
+  background: #171a21;
+  padding: 14px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.sidebar__header { 
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.sidebar__section {
+  margin-bottom: 20px;
+}
+
+.sidebar__title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.sidebar__search input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b3b3b;
+  color: #ffffff;
+}
+
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sidebar__thumb {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.sidebar__name {
+  font-size: 14px;
+}
+
+/* ===== Main content ===== */
+.library__main {
+  background: #1b2838;
+  padding: 22px 28px 40px;
+}
+
+.shelf {
+  margin-bottom: 26px;
+}
+
+.shelf__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.shelf__title {
+  font-size: 1.5rem;
+}
+
+.shelf__sub {
+  color: #b9c2cc;
+  font-size: 14px;
+}
+
+.shelf__header--row {
+  align-items: center;
+}
+
+.shelf__tools {
+  display: flex;
+  align-items: center;
+}
+
+.shelf__sort-label {
+  font-size: 13px;
+  color: #b9c2cc;
+}
+
+.shelf__sort {
+  margin-right: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b3b3b;
+  color: #ffffff;
+}
+
+.shelf__layout {
+  height: 32px;
+  width: 38px;
+  border: 0;
+  border-radius: 4px;
+  background: #2a475e;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ===== Capsules ===== */
+.capsule {
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 200px;
+}
+
+.capsule--wide {
+  width: 460px;
+  height: 215px;
+}
+
+.capsule--tall {
+  width: 184px;
+  height: 274px;
+}
+
+.capsule__img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.capsule:hover .capsule__img {
+  filter: brightness(1.06);
+}
+
+/* Bottom gradient overlay */
+.capsule__overlay {
+  padding: 10px;
+  color: #ffffff;
+}
+
+/* Time played card */
+.timecard {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(31, 46, 60, .85);
+  border-radius: 6px;
+  padding: 10px 12px;
+  width: 290px;
+}
+
+.timecard__icon {
+  color: #67c1f5;
+}
+
+.timecard__label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .4px;
+}
+
+.timecard__line {
+  font-size: 12px;
+  color: #b9c2cc;
+}
+
+/* ===== Layout for shelves ===== */
+.shelf__row {
+  display: flex;
+  gap: 14px;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}

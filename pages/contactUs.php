@@ -26,7 +26,7 @@
 
         <div class = "pageWrapper">
             <div class="pageContent">
-                <!-- Write the main content here -->
+                <!-- Write the main content here ...-->
             </div>
         </div>
         
