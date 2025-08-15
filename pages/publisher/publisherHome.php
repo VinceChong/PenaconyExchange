@@ -23,10 +23,14 @@ if (!isset($_SESSION["publisher"])) {
     <body>
         <?php include("../../includes/publisherHeader.php"); ?>
 
-        <div class="gamesWrapper">
-            <h2 style="color:white;">Your Games</h2>
-            <div id="gamesContainer"></div>
-            <p id="noGamesMessage" class="noGames" style="display:none;">You have not uploaded any games yet.</p>
+        <div class = "pageWrapper">
+            <div class="pageContent">
+                <div class="gamesWrapper">
+                    <h2 style="color:white;">Your Games</h2>
+                    <div id="gamesContainer"></div>
+                    <p id="noGamesMessage" class="noGames" style="display:none;">You have not uploaded any games yet.</p>
+                </div>
+            </div>
         </div>
         
         <?php include("../../includes/footer.php"); ?>
