@@ -169,7 +169,7 @@
                     if (!empty($gamePreviews['video'])) {
                         foreach ($gamePreviews['video'] as $vid) {
                             echo '<img class="thumb" data-type="video" data-src="' . htmlspecialchars($vid['url']) . '" 
-                                    src="/PenaconyExchange/assets/image/harmony.png" 
+                                    src="'. htmlspecialchars($vid['thumbnail']) . '"
                                     alt="Video Preview">';
                         }
                     }

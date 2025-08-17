@@ -17,6 +17,7 @@
     <ul id = "headerList">
         <li> <a href = "/PenaconyExchange/"> Home </a></li>
         <li> <a href = "/PenaconyExchange/pages/library.php"> Library </a></li>
+        <li> <a href = "/PenaconyExchange/pages/contactus.php"> Contact Us </a></li>
         <li> <a href = "/PenaconyExchange/pages/<?php echo $link; ?>"> Profile </a></li>
         
     </ul>

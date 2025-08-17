@@ -6,17 +6,25 @@
 
     <div id = "clickable">
         <div class= "column">
+            <h3 class = "contact"> About us </h3>
             <ul class = "footerList">
-                <li> <a href = ""> Privacy Policy </li>
-                <li> <a href = ""> Legal </li>
-                <li> <a href = ""> About Penacony Exchange </li>
+                <li class = "contact"> <a href = ""> Privacy Policy </a> </li>
+                <li class = "contact"> <a href = ""> Legal </a> </li>
+                <li class = "contact"> <a href = ""> About Penacony Exchange </a> </li>
             </ul>
         </div>
 
         <div class= "column">
+            <h3 class = "contact"> Contact Us </h3>
+            <p class = "contact"> Email        : penaconyExchange@gmail.com </p>
+            <p class = "contact"> Phone Number : 012-345 6789</p>
+        </div>
+
+        <div class= "column">
+            <h3 class = "contact"> Social Media </h3>
             <ul class = "footerList">
-                <li> <a href = ""> FaceBook </li>
-                <li> <a href = ""> X </li>
+                <li class = "contact"> <a href = ""> FaceBook </a> </li>
+                <li class = "contact"> <a href = ""> X </a> </li>
             </ul>
         </div>
     </div>
@@ -29,7 +37,6 @@
         background: linear-gradient( #0f4c81, #939cd4ff);
         display: flex;
         flex-direction: column;
-        align-items: center;
         position: relative;
         bottom: 0;
     }
@@ -47,12 +54,19 @@
     footer div#clickable {
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
+        color: #ffffff;
     }
 
     .column {
         display: flex;
         flex-direction: column;
         justify-content: left;
+        padding: 5px;
+    }
+
+    .contact {
+        margin: 1px;
     }
 
     ul#footerList {
@@ -65,6 +79,7 @@
     }
 
     ul#footerList li {
+        margin: 3px;
         margin: 0 10px;
         white-space: nowrap;
     }
