@@ -9,21 +9,38 @@
     }
 
     // Database connection
-    include("../db/backend/db.php"); // adjust to your DB connection file path
+    $user = $_SESSION["user"];
+    $username = $user["username"];
+    $profilePicture = $user["profilePicture"];
 
-    $userId = $_SESSION["user"]["userId"];
+    if($profilePicture === "N/A" || empty($profilePicture)){
+        $profilePicture = "/PenaconyExchange/db/assets/profile/default.jpg";
+    }
 
+    include("../db/backend/db.php"); // adjust to DB connection file path
+
+    $userId = $_SESSION["user"]["userId"]; // Assuming user ID is stored here
+
+    function retrieveGameDetails($connect, $gameId) {
         $query = "
             SELECT *
-            FROM Cart c
-            INNER JOIN Game g ON c.gameId = g.gameId
-            WHERE c.userId = ?
-        ";
-        
-        $stmt = $connect->prepare($query);
-        $stmt->bind_param("i", $gameID);
-        $stmt->execute();
-        $result = $stmt->get_result();
+            FROM Game g
+            JOIN AboutGame ab ON g.gameId = ab.gameId
+            JOIN Publisher p ON g.publisherId = p.publisherId
+            WHERE g.gameId = ?
+            ";
+
+        $statement = $connect->prepare($query);
+        $statement->bind_param("i", $gameId);
+        $statement->execute();
+        $result = $statement->get_result();
+        return $result->fetch_assoc();
+
+    }
+
+        $gameId=1;
+        $gameData= retrieveGameDetails($connect, $gameId);
+
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +57,14 @@
 
         <div class="pageWrapper">
             <div class="pageContent">
+                <h1>My Cart</h1>
+
+                <div id="wishListHeader" style="display:flex;">
+                    <a href="/PenaconyExchange/pages/wishlist.php" target="_blank">
+                        <button id="wishlist">Wishlist</button>
+                    </a>
+                </div>
+                
                 <?php if ($gameData): ?>
                     <h2><?php echo htmlspecialchars($gameData['gameTitle']); ?></h2>
                     <img src="/PenaconyExchange/assets/game_images/<?php echo htmlspecialchars($gameData['mainPicture']); ?>" 
