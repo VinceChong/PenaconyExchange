@@ -1,11 +1,11 @@
 .cart-container {
-                margin: 20px 0;
+    margin: 20px 0;
                 border: 1px solid #ddd;
                 border-radius: 5px;
                 padding: 15px;
                 background-color: #1b2838;
-            }
-            
+}
+
 .cart-item {
     display: flex;
     align-items: center;

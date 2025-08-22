@@ -21,7 +21,9 @@
 
     $userId = $_SESSION["user"]["userId"]; // Assuming user ID is stored here
 
+
     function retrieveGameDetails($connect, $gameId) {
+
         $query = "
             SELECT g.gameId, g.gameTitle, g.gameDesc, g.mainPicture, g.price
             FROM Cart c
@@ -253,7 +255,9 @@
                     <h3>Estimated Total</h3>
                     <div class="total-amount" id="total-amount">RM0.00</div>
                     <p>Sales tax will be calculated during checkout where applicable</p>
-                    <button class="checkout-btn">Continue to payment</button>
+                    <button class="checkout-btn">
+                        <a href="/PenaconyExchange/pages/paymentGateways.php" target="_blank">
+                    Continue to payment</button>
                 </div>
                 <?php endif; ?>
             </div>
