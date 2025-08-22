@@ -36,6 +36,9 @@ $result = retrieveWishlist($connect, $userId);
 if ($result === false) {
     die("Query failed: " . $connect->error);
 }
+
+    $userId=1;
+    $gameData= retrieveWishlist($connect, $userId);
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +76,7 @@ if ($result === false) {
                     </a>
                 </div>
 
-                <?php if ($result->num_rows > 0): ?>
+                <?php if ($gameData): ?>
                     <div class="wishListContainer">
                         <?php while ($row = $result->fetch_assoc()): ?>
                             <div class="wishListItem">
