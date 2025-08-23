@@ -107,6 +107,8 @@ if (isset($_POST['remove_from_wishlist']) && isset($_POST['game_id'])) {
     <link rel="stylesheet" href="/PenaconyExchange/styles/common.css"/>
     <link rel="stylesheet" href="/PenaconyExchange/styles/wishlist.css"/>
     <link rel="icon" href="/PenaconyExchange/assets/image/harmony.png"/>
+    <?php echo realpath("../css/style.css"); ?>
+
     <style>
         .wishlist-header {
             display: flex;
@@ -331,7 +333,11 @@ if (isset($_POST['remove_from_wishlist']) && isset($_POST['game_id'])) {
             padding: 10px;
             border-radius: 3px;
             width: fit-content;
-            font-colour: white;
+        }
+
+        .select-all-container label {
+            color: #ffffff;
+            font-size: 14px;
         }
 
         .wishlist-item-image {
@@ -375,101 +381,109 @@ if (isset($_POST['remove_from_wishlist']) && isset($_POST['game_id'])) {
                 </div>
 
                 <?php if (count($wishlistItems) > 0): ?>
-                    <form method="POST" action="">
-                        <div class="select-all-container">
-                            <input type="checkbox" id="selectAll">
-                            <label for="selectAll">Select All</label>
-                        </div>
-                        
-                        <div class="wishlist-container">
-                            <?php foreach ($wishlistItems as $game): ?>
-                                <div class="wishlist-item">
-                                    <input type="checkbox" class="game-checkbox" name="selected_games[]" value="<?php echo $game['gameId']; ?>">
-                                    <div class="game-image">
-                                        <img class= "wishlist-item-image" src="<?php echo htmlspecialchars($game['mainPicture']); ?>" alt="<?php echo htmlspecialchars($game['gameTitle']); ?> thumbnail">
+                <!-- ONE form for Add to Cart -->
+                <form method="POST" action="/PenaconyExchange/pages/cart.php">
+                    <div class="select-all-container">
+                        <input type="checkbox" id="selectAll">
+                        <label for="selectAll">Select All</label>
+                    </div>
+
+                    <div class="wishlist-container">
+                        <?php foreach ($wishlistItems as $game): ?>
+                            <div class="wishlist-item">
+                                <input type="checkbox" class="game-checkbox" name="selected_games[]" value="<?php echo $game['gameId']; ?>">
+                                
+                                <div class="game-image">
+                                    <img class="wishlist-item-image" 
+                                        src="<?php echo htmlspecialchars($game['mainPicture']); ?>" 
+                                        alt="<?php echo htmlspecialchars($game['gameTitle']); ?> thumbnail">
+                                </div>
+                                
+                                <div class="game-details">
+                                    <h2 class="game-title"><?php echo htmlspecialchars($game['gameTitle']); ?></h2>
+
+                                    <div class="game-info">
+                                        <div class="info-item">
+                                            <span class="info-label">RELEASE DATE:</span>
+                                            <span class="info-value"><?php echo isset($game['releaseDate']) ? htmlspecialchars($game['releaseDate']) : 'N/A'; ?></span>
+                                        </div>
                                     </div>
-                                    
-                                    <div class="game-details">
-                                        <h2 class="game-title"><?php echo htmlspecialchars($game['gameTitle']); ?></h2>
-                                        
-                                        <div class="game-info">
-                                            <div class="info-item">
-                                                <span class="info-label">RELEASE DATE:</span>
-                                                <span class="info-value"><?php echo isset($game['releaseDate']) ? htmlspecialchars($game['releaseDate']) : 'N/A'; ?></span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="price-section">
-                                            <span class="game-price">RM<?php 
-                                                echo isset($game['price']) ? number_format((float)$game['price'], 2) : '0.00';
-                                            ?></span>
-                                        </div>
-                                        
-                                        <div class="wishlist-actions">
-                                            <span class="added-date">Added on <?php echo date('d/m/Y'); ?></span>
-                                            <form method="POST" action="" style="display:inline;">
-                                                <input type="hidden" name="game_id" value="<?php echo $game['gameId']; ?>">
-                                                <input type="hidden" name="remove_from_wishlist" value="1">
-                                                <button type="submit" class="remove-btn">remove</button>
-                                            </form>
-                                        </div>
+
+                                    <div class="price-section">
+                                        <span class="game-price">RM<?php 
+                                            echo isset($game['price']) ? number_format((float)$game['price'], 2) : '0.00';
+                                        ?></span>
+                                    </div>
+
+                                    <div class="wishlist-actions">
+                                        <span class="added-date">Added on <?php echo date('d/m/Y'); ?></span>
+
+                                        <!-- SEPARATE FORM for remove -->
+                                        <form method="POST" action="/PenaconyExchange/pages/wishlist.php" style="display:inline;">
+                                            <input type="hidden" name="game_id" value="<?php echo $game['gameId']; ?>">
+                                            <input type="hidden" name="remove_from_wishlist" value="1">
+                                            <button type="submit" class="remove-btn">remove</button>
+                                        </form>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
-                        </div>
-                        
-                        <div class="selection-actions">
-                            <button type="submit" name="add_to_cart" class="add-to-cart-btn">Add Selected to Cart</button>
-                        </div>
-
-                    </form>
-                <?php else: ?>
-                    <div class="empty-wishlist">
-                        <h2>Your wishlist is empty</h2>
-                        <p>Kindly add your favourites!</p>
-                        <a href="/PenaconyExchange/pages/home.php">
-                            <button class="browse-btn">Browse games now</button>
-                        </a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                <?php endif; ?>
+
+                    <div class="selection-actions">
+                        <button type="submit" name="add_to_cart" class="add-to-cart-btn">Add Selected to Cart</button>
+                    </div>
+                </form>
+
+            <?php else: ?>
+                <div class="empty-wishlist">
+                    <h2>Your wishlist is empty</h2>
+                    <p>Kindly add your favourites!</p>
+                    <a href="/PenaconyExchange/pages/home.php">
+                        <button class="browse-btn">Browse games now</button>
+                    </a>
+                </div>
+            <?php endif; ?>
+
+                </div>
             </div>
-        </div>
     </div>
 
     <?php include("../includes/footer.php"); ?>
     <script>
+
         // Search functionality
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const items = document.querySelectorAll('.wishlist-item');
-            
-            items.forEach(item => {
-                const title = item.querySelector('.game-title').textContent.toLowerCase();
-                
-                if (title.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const items = document.querySelectorAll('.wishlist-item');
+    
+    items.forEach(item => {
+        const title = item.querySelector('.game-title').textContent.toLowerCase();
         
-        // Select all functionality
-        document.getElementById('selectAll').addEventListener('change', function(e) {
-            const checkboxes = document.querySelectorAll('.game-checkbox');
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = e.target.checked;
-            });
-        });
-        
-        // Update select all checkbox when individual checkboxes change
+        if (title.includes(searchTerm)) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+
+    // Select all functionality
+    document.getElementById('selectAll').addEventListener('change', function(e) {
         const checkboxes = document.querySelectorAll('.game-checkbox');
         checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                const allChecked = document.querySelectorAll('.game-checkbox:checked').length === checkboxes.length;
-                document.getElementById('selectAll').checked = allChecked;
-            });
+            checkbox.checked = e.target.checked;
         });
+    });
+
+    // Update select all checkbox when individual checkboxes change
+    const checkboxes = document.querySelectorAll('.game-checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const allChecked = document.querySelectorAll('.game-checkbox:checked').length === checkboxes.length;
+            document.getElementById('selectAll').checked = allChecked;
+        });
+    });
     </script>
-</body>
+    </body>
 </html>

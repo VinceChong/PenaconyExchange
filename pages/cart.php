@@ -8,6 +8,21 @@
         exit;
     }
 
+    if (isset($_POST['add_to_cart']) && !empty($_POST['selected_games'])) {
+        foreach ($_POST['selected_games'] as $gameId) {
+            $query = "INSERT INTO Cart (userId, gameId) VALUES (?, ?)
+                    ON DUPLICATE KEY UPDATE gameId = gameId";
+            $stmt = $connect->prepare($query);
+            $stmt->bind_param("ii", $_SESSION['user']['userId'], $gameId);
+            $stmt->execute();
+        }
+
+        // Redirect to show the updated cart
+        header("Location: cart.php");
+        exit();
+    }
+
+
     // Database connection
     include("../db/backend/db.php"); // adjust to DB connection file path
 
