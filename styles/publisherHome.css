@@ -3,6 +3,26 @@
     margin: 30px auto;
     padding: 0 20px;
 }
+
+.subheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#addGameBtn {
+    background: #ffffff;
+    color: #0f4c81;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: large;
+    height: 50px;
+}
+
 .gameCard {
     display: flex;
     background: linear-gradient(to right, #1b4b85, #2e6bb3);
@@ -14,43 +34,51 @@
     background-size: cover;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .gameCard:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
+
 .gameImage {
     flex: 0 0 250px;
     height: 180px;
     object-fit: cover;
     width: 100%;
 }
+
 .gameDetails {
     padding: 15px;
-    color: #fff;
+    color: #ffffff;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .gameTitle {
     font-size: 1.3rem;
     font-weight: bold;
     margin: 0;
 }
+
 .gameYear {
     font-size: 0.9rem;
     opacity: 0.9;
 }
+
 .gameDesc {
     font-size: 0.95rem;
     margin-top: 8px;
     flex: 1;
 }
+
 .availableDate {
     font-size: 0.85rem;
     margin-top: 10px;
     opacity: 0.8;
 }
+
 .noGames {
     text-align: center;
     color: #bbb;

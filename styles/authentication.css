@@ -9,6 +9,16 @@
     box-sizing: border-box;
 }
 
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #ebeae1;
+    box-shadow: inset 4px 4px 6px rgb(255, 241, 199);
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .tabs {
     display: flex;
     justify-content: space-between;

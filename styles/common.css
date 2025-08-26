@@ -13,16 +13,6 @@ label {
     color: #0f4c81;
 }
 
-input {
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    background: #ebeae1;
-    box-shadow: inset 4px 4px 6px rgb(255, 241, 199);
-    width: 100%;
-    box-sizing: border-box;
-}
-
 .pageWrapper {
     display: flex;
     flex-direction: column;

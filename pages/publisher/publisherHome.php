@@ -26,7 +26,10 @@ if (!isset($_SESSION["publisher"])) {
         <div class = "pageWrapper">
             <div class="pageContent">
                 <div class="gamesWrapper">
-                    <h2 style="color:white;">Your Games</h2>
+                    <div class = "subheader">
+                        <h2 style="color:white;">Your Games</h2>
+                        <button id = "addGameBtn" onclick = "window.location.href='addGame.php'"> Add New Game </button>
+                    </div>
                     <div id="gamesContainer"></div>
                     <p id="noGamesMessage" class="noGames" style="display:none;">You have not uploaded any games yet.</p>
                 </div>
