@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
-        <title> Penacony </title>
+        <title> Penacony Exchange </title>
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/common.css"/>
         <link rel = "stylesheet" href = "/PenaconyExchange/styles/authentication.css"/>
         <link rel = "icon" href = "/PenaconyExchange/assets/image/harmony.png">
@@ -49,10 +49,6 @@
                     <input type = "password" name = "password" id = "password" placeholder = "Password" required/>
                 </div>
 
-                <div class = "changeUser">
-                    <p> <a href = "/PenaconyExchange/pages/publisher/publisherLogin.php">Login/Sign up As Publisher</a> </p>
-                </div>
-
                 <button type = "submit" class = "button"> Login </button>
             </form>
 
@@ -77,10 +73,6 @@
                     <input type = "password" name = "confirmPassword" id = "confirmPassword" placeholder = "Confirm Password" required/>
                 </div>
                 
-                <div class = "changeUser">
-                    <p> <a href = "/PenaconyExchange/pages/publisher/publisherLogin.php">Login/Sign up As Publisher</a> </p>
-                </div>
-
                 <button type = "submit" class = "button"> Sign Up </button>
             </form>
         </div>
